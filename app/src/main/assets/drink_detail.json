@@ -1,0 +1,16 @@
+{
+  "code": 0,
+  "msg": "Success",
+  "data": {
+    "id": 2,
+    "name": "Mát cha",
+    "price": 25000,
+    "size": "M",
+    "count": 4,
+    "discount": 1,
+    "percent_discount": 10,
+    "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/drink2.jpg?alt=media&token=e16972ce-b09d-48c3-8270-c175c0d8c188",
+    "ship_price": 10000,
+    "payment_channel": "ATM"
+  }
+}

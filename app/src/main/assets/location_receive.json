@@ -1,0 +1,39 @@
+{
+  "code": 0,
+  "msg": "Success",
+  "data": {
+    "title": "Các cơ sở gần nhất ",
+    "list_location": [
+      {
+        "id": 1,
+        "name": "434 Trần Khát Chân - Hai Bà Trưng",
+        "distance": "cách bạn 2.5km"
+      },
+      {
+        "id": 2,
+        "name": "275 Hoàng Mai",
+        "distance": "cách bạn 5km"
+      },
+      {
+        "id": 3,
+        "name": "45 Phố Huế ",
+        "distance": "cách bạn 4km"
+      },
+      {
+        "id": 4,
+        "name": "125 Trần Đại Nghĩa",
+        "distance": "cách bạn 5.5km"
+      },
+      {
+        "id": 5,
+        "name": "99 Bà Triệu ",
+        "distance": "cách bạn 3km"
+      },
+      {
+        "id": 6,
+        "name": "46 Hoàn kiếm",
+        "distance": "cách bạn 7km"
+      }
+    ]
+  }
+}

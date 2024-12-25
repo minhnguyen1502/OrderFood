@@ -1,0 +1,123 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@color/pink">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/count">
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tvMakeModel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Make and Model"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Year" />
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price" />
+        <TextView
+            android:id="@+id/tvcolor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="color" />
+        <TextView
+            android:id="@+id/tvmileage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mileage" />
+        <TextView
+            android:id="@+id/tvfuelType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="transmission" />
+        <TextView
+            android:id="@+id/tvengine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="engine" />
+        <TextView
+            android:id="@+id/tvfeatures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="features" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="số lượng"
+        app:layout_constraintTop_toTopOf="@id/count"
+        app:layout_constraintBottom_toBottomOf="@id/count"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvCount">
+
+        <ImageView
+            android:id="@+id/up"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/up" />
+
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:text="1" />
+
+        <ImageView
+            android:id="@+id/down"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/down" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btnAdd"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="thêm vào giỏ hàng"
+        android:background="@color/add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/count"
+        app:layout_constraintBottom_toBottomOf="@id/count"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+{
+    "code": 0,
+    "msg": "Success",
+    "data": {
+        "title": "Đồ ăn",
+        "list_food": [
+            {
+                "id": 1,
+                "name": "Bánh mì",
+                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/food1.jpg?alt=media&token=930a10e1-e979-455c-9183-65bb976ae260",
+                "price": 30000
+            },
+            {
+                "id": 2,
+                "name": "Bún đậu",
+                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/food2.jpg?alt=media&token=723d0d6f-80aa-4f45-8f54-d75d610de346",
+                "price": 25000
+            },
+            {
+                "id": 3,
+                "name": "Xúc xích",
+                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/food3.jpg?alt=media&token=bc519813-25e0-4c00-8bde-d0f64c671c85",
+                "price": 10000
+            },
+            {
+                "id": 4,
+                "name": "Nem chua",
+                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/food4.jpg?alt=media&token=cb6fe513-f486-421d-91a1-b1efc275aba5",
+                "price": 6000
+            },
+            {
+                "id": 5,
+                "name": "Bún chả",
+                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/food5.jpg?alt=media&token=d0a00b76-68db-4e1a-9bde-3d1d7ac36c38",
+                "price": 35000
+            }
+        ]
+    }
+}

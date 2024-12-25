@@ -1,0 +1,14 @@
+{
+  "code": 0,
+  "msg": "Success",
+  "data": {
+    "id": 4,
+    "name": "Nem chua",
+    "price": 6000,
+    "ship_price": 20000,
+    "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/food4.jpg?alt=media&token=cb6fe513-f486-421d-91a1-b1efc275aba5",
+    "payment_channel": "VNPay",
+    "percent_discount": 0,
+    "discount": 0
+  }
+}

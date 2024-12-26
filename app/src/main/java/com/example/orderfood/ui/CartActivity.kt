@@ -1,13 +1,9 @@
 package com.example.orderfood.ui
 
+import android.app.Dialog
 import android.content.Intent
-import android.os.Bundle
+import android.os.Handler
 import android.util.Log
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.api.model.Order
 import com.example.orderfood.R
@@ -17,19 +13,34 @@ import com.example.orderfood.databinding.ActivityCartBinding
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-class CartActivity : BaseActivity<ActivityCartBinding>(ActivityCartBinding::inflate){
+class CartActivity : BaseActivity<ActivityCartBinding>(ActivityCartBinding::inflate) {
     private val orders: MutableList<Order> = mutableListOf()
 
     override fun initView() {
         loadOrdersFromFile()
 
         binding.recycleView.layoutManager = LinearLayoutManager(this)
-        binding.recycleView.adapter = OrderAdapter(orders)
+        binding.recycleView.adapter = OrderAdapter(orders) { order ->
+            deleteOrder(order)
+        }
     }
 
     override fun bindView() {
         binding.btnBuy.setOnClickListener { buyAll() }
+        binding.back.setOnClickListener { finish() }
     }
+
+    private fun deleteOrder(order: Order) {
+        val index = orders.indexOf(order)
+        if (index != -1) {
+            orders.removeAt(index)
+            binding.recycleView.adapter?.notifyItemRemoved(index)
+            binding.recycleView.adapter?.notifyDataSetChanged()
+            saveOrdersToFile()
+
+        }
+    }
+
 
     private fun buyAll() {
         for (order in orders) {
@@ -41,23 +52,21 @@ class CartActivity : BaseActivity<ActivityCartBinding>(ActivityCartBinding::infl
         binding.recycleView.adapter?.notifyDataSetChanged()
 
         saveOrdersToFile()
-        showPurchaseSuccessDialog()
+        showDialogSuccess()
 
     }
-    private fun showPurchaseSuccessDialog() {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Success")
-        builder.setMessage("Your purchase was successful!")
-        builder.setPositiveButton("OK") { dialog, _ ->
+
+    private fun showDialogSuccess() {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dialog_success)
+        dialog.setCancelable(false)
+        Handler().postDelayed({
             dialog.dismiss()
             startActivity(Intent(this, HistoryActivity::class.java))
             finish()
-        }
-        builder.setCancelable(false)
-
-        val dialog = builder.create()
-        dialog.show()
+        },3000)
     }
+
     private fun saveOrdersToFile() {
         try {
             val fileName = "order_food.json"

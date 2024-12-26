@@ -46,4 +46,15 @@
     android:background="@color/add"
     android:padding="8dp"/>
 
+    <TextView
+    android:id="@+id/tvReceive"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Received"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="@id/tvCancel"
+    app:layout_constraintTop_toTopOf="parent"
+    android:background="@color/add"
+    android:padding="8dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

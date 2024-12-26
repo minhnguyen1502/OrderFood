@@ -11,8 +11,32 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:src="@drawable/arrow_back_"
+        android:layout_margin="8dp"
+        android:padding="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Detail"
+        android:textSize="32sp"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/back"
+        app:layout_constraintTop_toTopOf="@id/back"
+        app:layout_constraintEnd_toStartOf="@id/gone"
+        app:layout_constraintBottom_toBottomOf="@id/back"/>
+
+    <ImageView
+        android:id="@+id/gone"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/arrow_back_"
+        android:visibility="invisible"
+        android:clickable="false"
+        android:focusable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <LinearLayout
         android:id="@+id/food"
@@ -26,14 +50,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/back">
 
-        <ImageView
-            android:id="@+id/food_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:contentDescription="Product Image"
-            android:scaleType="centerCrop" />
 
-        <!-- Product Name -->
         <TextView
             android:id="@+id/food_name"
             android:layout_width="wrap_content"
@@ -43,7 +60,6 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <!-- Product Price -->
         <TextView
             android:id="@+id/food_price"
             android:layout_width="wrap_content"
@@ -52,7 +68,6 @@
             android:text="Price: 8,000 VND"
             android:textSize="16sp" />
 
-        <!-- Shipping Price -->
         <TextView
             android:id="@+id/food_shipping_price"
             android:layout_width="wrap_content"
@@ -61,7 +76,6 @@
             android:text="Shipping: 18,000 VND"
             android:textSize="16sp" />
 
-        <!-- Payment Channel -->
         <TextView
             android:id="@+id/food_payment_channel"
             android:layout_width="wrap_content"
@@ -70,7 +84,6 @@
             android:text="Payment Method: ZaloPay"
             android:textSize="16sp" />
 
-        <!-- Discount -->
         <TextView
             android:id="@+id/food_discount"
             android:layout_width="wrap_content"
@@ -92,7 +105,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/back">
-        <!-- Product Name -->
         <TextView
             android:id="@+id/drink_name"
             android:layout_width="wrap_content"
@@ -101,7 +113,6 @@
             android:textStyle="bold"
             android:layout_marginTop="16dp"/>
 
-        <!-- Product Size -->
         <TextView
             android:id="@+id/drink_size"
             android:layout_width="wrap_content"
@@ -109,7 +120,6 @@
             android:textSize="16sp"
             android:layout_marginTop="8dp"/>
 
-        <!-- Product Price -->
         <TextView
             android:id="@+id/drink_price"
             android:layout_width="wrap_content"
@@ -117,7 +127,6 @@
             android:textSize="16sp"
             android:layout_marginTop="8dp"/>
 
-        <!-- Shipping Price -->
         <TextView
             android:id="@+id/drink_shipping_price"
             android:layout_width="wrap_content"
@@ -125,7 +134,6 @@
             android:textSize="16sp"
             android:layout_marginTop="8dp"/>
 
-        <!-- Payment Channel -->
         <TextView
             android:id="@+id/drink_payment_channel"
             android:layout_width="wrap_content"
@@ -133,7 +141,6 @@
             android:textSize="16sp"
             android:layout_marginTop="8dp"/>
 
-        <!-- Discount -->
         <TextView
             android:id="@+id/drink_discount"
             android:layout_width="wrap_content"
@@ -141,7 +148,6 @@
             android:textSize="16sp"
             android:layout_marginTop="8dp"/>
 
-        <!-- Total Price -->
         <TextView
             android:id="@+id/drink_total_price"
             android:layout_width="wrap_content"

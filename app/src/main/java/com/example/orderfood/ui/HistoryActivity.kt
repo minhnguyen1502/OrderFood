@@ -17,31 +17,40 @@ import com.google.gson.reflect.TypeToken
 
 class HistoryActivity : BaseActivity<ActivityHistoryBinding>(ActivityHistoryBinding::inflate){
     private val orders: MutableList<Order> = mutableListOf()
+    private lateinit var adapter: HistoryAdapter
 
     override fun initView() {
         loadOrdersFromFile()
-        val adapter = HistoryAdapter(orders) { order ->
-            // Handle the "Hủy đơn" button click by changing the order's status
-            cancelOrder(order)
-        }
+        adapter = HistoryAdapter(orders,
+            onCancelClick = { order ->
+                cancelOrder(order)
+            },
+            onReceivedClick = { order ->
+                receivedOrder(order)
+            }
+        )
         binding.recycleView.layoutManager = LinearLayoutManager(this)
         binding.recycleView.adapter = adapter
 
     }
 
     override fun bindView() {
-
+        binding.back.setOnClickListener { finish() }
 
     }
 
     private fun cancelOrder(order: Order) {
-        order.status = 2  // Change the status to 2
-        // Optionally, update the UI and notify the adapter
+        order.status = 2
         binding.recycleView.adapter?.notifyDataSetChanged()
-
-        // If you want to save the updated order back to the file, do so here
         saveOrdersToFile()
     }
+
+    private fun receivedOrder(order: Order) {
+        order.status = 3
+        binding.recycleView.adapter?.notifyDataSetChanged()
+        saveOrdersToFile()
+    }
+
     private fun loadOrdersFromFile() {
         try {
             val fileName = "order_food.json"
@@ -49,7 +58,6 @@ class HistoryActivity : BaseActivity<ActivityHistoryBinding>(ActivityHistoryBind
             val jsonContent = fileInputStream.bufferedReader().use { it.readText() }
             fileInputStream.close()
 
-            // Parse JSON thành danh sách Order
             val gson = Gson()
             val type = object : TypeToken<List<Order>>() {}.type
             val loadedOrders: List<Order> = gson.fromJson(jsonContent, type)
@@ -60,7 +68,6 @@ class HistoryActivity : BaseActivity<ActivityHistoryBinding>(ActivityHistoryBind
             Log.e("CartActivity", "Error reading orders: ${e.message}")
         }
     }
-    // Method to save updated orders to file (optional)
     private fun saveOrdersToFile() {
         try {
             val gson = Gson()

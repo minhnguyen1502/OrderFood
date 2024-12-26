@@ -117,11 +117,9 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
         val drink = findDrinkById(drinkId)
 
         if (drink != null) {
-            // Đọc thông tin các đơn hàng đã có và id tiếp theo từ file
             val existingOrders = readOrdersFromFile()
             val nextOrderId = getNextOrderId(existingOrders)
 
-            // Tạo item hóa đơn với id tự động tăng
             val order = Order(
                 id = nextOrderId,
                 name = drink.name,
@@ -130,14 +128,11 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
                 status = 0
             )
 
-            // Thêm order mới vào danh sách
             existingOrders.add(order)
 
-            // Chuyển danh sách orders thành JSON
             val gson = Gson()
             val jsonOrderList = gson.toJson(existingOrders)
 
-            // Lưu lại JSON vào internal storage
             saveInvoiceToInternalStorage(jsonOrderList)
         } else {
             Toast.makeText(this, "Drink not found", Toast.LENGTH_SHORT).show()
@@ -151,10 +146,8 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
             val fileInputStream = openFileInput(fileName)
 
             if (fileInputStream.available() > 0) {
-                // Đọc file hiện tại
                 val fileContent = fileInputStream.bufferedReader().use { it.readText() }
                 val gson = Gson()
-                // Chuyển đổi JSON thành danh sách các order
                 val orderListType = object : TypeToken<MutableList<Order>>() {}.type
                 val existingOrders: List<Order> = gson.fromJson(fileContent, orderListType)
                 orders.addAll(existingOrders)
@@ -167,11 +160,9 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
     }
 
     private fun getNextOrderId(existingOrders: List<Order>): Int {
-        // Nếu không có đơn hàng nào, id đầu tiên là 1
         if (existingOrders.isEmpty()) {
             return 1
         }
-        // Lấy id lớn nhất từ các đơn hàng hiện tại và cộng thêm 1
         val maxId = existingOrders.maxOfOrNull { it.id } ?: 0
         return maxId + 1
     }
@@ -180,18 +171,15 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
         try {
             val fileName = "order_food.json"
 
-            // Mở file để ghi
             val fileOutputStream = openFileOutput(fileName, MODE_PRIVATE)
             fileOutputStream.write(jsonOrderList.toByteArray())
             fileOutputStream.close()
 
-            // Hiển thị thông báo thành công
             Toast.makeText(this, "Order saved successfully!", Toast.LENGTH_SHORT).show()
 
         } catch (e: Exception) {
             e.printStackTrace()
 
-            // Hiển thị thông báo lỗi
             Toast.makeText(this, "Failed to save order: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }

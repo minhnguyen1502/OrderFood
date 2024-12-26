@@ -26,7 +26,7 @@ class MainAdapter(
         private const val TYPE_LOCATION = 3
     }
 
-    private val expandedItems = mutableSetOf<Int>() // Lưu trạng thái mở rộng
+    private val expandedItems = mutableSetOf(TYPE_DRINK, TYPE_FOOD, TYPE_LOCATION)
     private var displayList: MutableList<Any> = mutableListOf()
 
     init {
@@ -35,19 +35,16 @@ class MainAdapter(
 
     private fun updateDisplayList() {
         displayList.clear()
-        // Thêm tiêu đề Drinks
         displayList.add(TYPE_DRINK)
         if (expandedItems.contains(TYPE_DRINK)) {
             drinkList?.let { displayList.addAll(it) }
         }
 
-        // Thêm tiêu đề Foods
         displayList.add(TYPE_FOOD)
         if (expandedItems.contains(TYPE_FOOD)) {
             foodList?.let { displayList.addAll(it) }
         }
 
-        // Thêm tiêu đề Locations
         displayList.add(TYPE_LOCATION)
         if (expandedItems.contains(TYPE_LOCATION)) {
             locationList?.let { displayList.addAll(it) }
@@ -127,7 +124,7 @@ class MainAdapter(
                 expandedItems.add(type)
             }
             updateDisplayList()
-            notifyDataSetChanged() // Update the RecyclerView
+            notifyDataSetChanged()
         }
     }
 

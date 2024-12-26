@@ -60,7 +60,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     }
 
 
-    // Phương thức loadJsonData để đọc dữ liệu từ file JSON
     private inline fun <reified T> loadJsonData(fileName: String, gson: Gson): T? {
         try {
             val assetManager: AssetManager = assets

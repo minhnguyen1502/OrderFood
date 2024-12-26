@@ -6,43 +6,63 @@
         "list_drink": [
             {
                 "id": 1,
-                "name": "Hồng trà",
-                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/drink1.png?alt=media&token=98783388-bbd5-4f6e-8acb-6c988dffb46a",
-                "price": 20000,
-                "discount": 1,
-                "percent_discount": 20
+                "name": "Trà sữa matcha",
+                "price": 30000,
+                "size": "L",
+                "count": 5,
+                "discount": 2,
+                "percent_discount": 15,
+                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/drink1.jpg?alt=media&token=abc123",
+                "ship_price": 12000,
+                "payment_channel": "VNPay"
             },
             {
                 "id": 2,
-                "name": "Mát cha",
-                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/drink2.jpg?alt=media&token=e16972ce-b09d-48c3-8270-c175c0d8c188",
-                "price": 25000,
+                "name": "Trà đào",
+                "price": 28000,
+                "size": "M",
+                "count": 3,
                 "discount": 1,
-                "percent_discount": 10
+                "percent_discount": 5,
+                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/drink2.jpg?alt=media&token=def456",
+                "ship_price": 10000,
+                "payment_channel": "MoMo"
             },
             {
                 "id": 3,
-                "name": "Trả sữa koi",
-                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/drink3.jpg?alt=media&token=a4930143-0f3d-4945-8cae-63827d4940a6",
-                "price": 50000,
-                "discount": 0,
-                "percent_discount": 0
+                "name": "Sinh tố bơ",
+                "price": 25000,
+                "size": "XL",
+                "count": 6,
+                "discount": 3,
+                "percent_discount": 20,
+                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/drink3.jpg?alt=media&token=ghi789",
+                "ship_price": 15000,
+                "payment_channel": "ZaloPay"
             },
             {
                 "id": 4,
-                "name": "Trà sữa kem",
-                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/drink4.jpg?alt=media&token=70cf7799-9272-42ae-84bc-32550a6db303",
-                "price": 100000,
-                "discount": 0,
-                "percent_discount": 0
+                "name": "Nước ép cam",
+                "price": 22000,
+                "size": "M",
+                "count": 7,
+                "discount": 1,
+                "percent_discount": 10,
+                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/drink4.jpg?alt=media&token=jkl012",
+                "ship_price": 9000,
+                "payment_channel": "Bank Transfer"
             },
             {
                 "id": 5,
-                "name": "Kem cheese",
-                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/drink5.jpg?alt=media&token=4876b1c9-cc15-4c3c-811e-1665021a1300",
-                "price": 50000,
-                "discount": 1,
-                "percent_discount": 10
+                "name": "Cà phê đá",
+                "price": 35000,
+                "size": "L",
+                "count": 2,
+                "discount": 0,
+                "percent_discount": 0,
+                "image": "https://firebasestorage.googleapis.com/v0/b/baby-photo-fb591.appspot.com/o/drink5.jpg?alt=media&token=mno345",
+                "ship_price": 13000,
+                "payment_channel": "Visa"
             }
         ]
     }

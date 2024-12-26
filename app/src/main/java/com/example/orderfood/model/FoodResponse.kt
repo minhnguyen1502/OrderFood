@@ -15,8 +15,12 @@ data class FoodData(
 data class FoodItem(
     val id: Int,
     val name: String,
+    val price: Int,
+    val ship_price: Int,
     val image: String,
-    val price: Int
+    val payment_channel: String,
+    val percent_discount: Int,
+    val discount: Int
 )
 // drink
 data class DrinkResponse(
@@ -31,12 +35,15 @@ data class DrinkData(
 )
 
 data class DrinkItem(
-    val id: Int,
+    val id:Int,
     val name: String,
-    val image: String,
     val price: Int,
+    val size: String,
     val discount: Int,
-    val percent_discount: Int
+    val percent_discount: Int,
+    val image: String,
+    val ship_price: Int,
+    val payment_channel: String
 )
 // location
 data class LocationResponse(
@@ -59,7 +66,9 @@ data class LocationItem(
 data class Order(
     val id: Int,
     val name: String,
-    val price: Int
+    val price: Int,
+    val count: Int,
+    var status: Int
 )
 
 data class OrderResponse(

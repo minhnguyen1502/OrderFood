@@ -47,4 +47,5 @@ abstract class BaseActivity<VB : ViewBinding>(val bindingFactory: (LayoutInflate
             e.printStackTrace()
         }
     }
+
 }

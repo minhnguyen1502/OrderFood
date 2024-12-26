@@ -1,71 +1,154 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/pink"
     android:orientation="vertical"
-    android:padding="8dp"
-    android:background="@color/pink">
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/arrow_back_"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/food"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:background="@color/white"
+        android:orientation="vertical"
         android:padding="8dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/count"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/count">
-        <ImageView
-            android:id="@+id/ivImage"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back">
 
-        <TextView
-            android:id="@+id/tvMakeModel"
+        <ImageView
+            android:id="@+id/food_image"
             android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="Product Image"
+            android:scaleType="centerCrop" />
+
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/food_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Make and Model"
-            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:text="Nem chua truyền thống"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
+        <!-- Product Price -->
         <TextView
-            android:id="@+id/tvYear"
-            android:layout_width="match_parent"
+            android:id="@+id/food_price"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Year" />
-        <TextView
-            android:id="@+id/tvPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Price" />
-        <TextView
-            android:id="@+id/tvcolor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="color" />
-        <TextView
-            android:id="@+id/tvmileage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="mileage" />
-        <TextView
-            android:id="@+id/tvfuelType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="transmission" />
-        <TextView
-            android:id="@+id/tvengine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="engine" />
-        <TextView
-            android:id="@+id/tvfeatures"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="features" />
+            android:layout_marginTop="8dp"
+            android:text="Price: 8,000 VND"
+            android:textSize="16sp" />
 
+        <!-- Shipping Price -->
+        <TextView
+            android:id="@+id/food_shipping_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Shipping: 18,000 VND"
+            android:textSize="16sp" />
+
+        <!-- Payment Channel -->
+        <TextView
+            android:id="@+id/food_payment_channel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Payment Method: ZaloPay"
+            android:textSize="16sp" />
+
+        <!-- Discount -->
+        <TextView
+            android:id="@+id/food_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Discount: 5% (400 VND)"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/drink"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back">
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/drink_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Product Size -->
+        <TextView
+            android:id="@+id/drink_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Product Price -->
+        <TextView
+            android:id="@+id/drink_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Shipping Price -->
+        <TextView
+            android:id="@+id/drink_shipping_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Payment Channel -->
+        <TextView
+            android:id="@+id/drink_payment_channel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Discount -->
+        <TextView
+            android:id="@+id/drink_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Total Price -->
+        <TextView
+            android:id="@+id/drink_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 
     <TextView
@@ -73,9 +156,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="số lượng"
-        app:layout_constraintTop_toTopOf="@id/count"
         app:layout_constraintBottom_toBottomOf="@id/count"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/count" />
 
     <LinearLayout
         android:id="@+id/count"
@@ -96,8 +179,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="16sp"
-            android:text="1" />
+            android:text="1"
+            android:textSize="16sp" />
 
         <ImageView
             android:id="@+id/down"
@@ -110,14 +193,12 @@
         android:id="@+id/btnAdd"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:background="@color/add"
         android:gravity="center"
         android:text="thêm vào giỏ hàng"
-        android:background="@color/add"
+        app:layout_constraintBottom_toBottomOf="@id/count"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/count"
-        app:layout_constraintBottom_toBottomOf="@id/count"/>
-
-
+        app:layout_constraintTop_toTopOf="@id/count" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
